@@ -1,0 +1,132 @@
+.logo {
+    width: toRem(184);
+    height: toRem(74);
+    @media (max-width: $smallMobile-428) {
+        width: toRem(140);
+        height: toRem(56);
+    }
+    // .logo__image
+    &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}
+.btn-link {
+    font-size: toRem(12);
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: 700;
+    padding: toRem(17) toRem(54) toRem(18);
+    border-radius: toRem(40);
+    box-shadow: 0px 4px 16px 0px rgba(51, 60, 79, 0.36);
+    text-align: center;
+    background-color: $darkColor;
+    position: relative;
+    transition: background-color 0.3s ease-in-out;
+    @media (any-hover) {
+        &:hover {
+            background-color: $blueColor;
+        }
+    }
+    &::before {
+        content: "";
+        width: toRem(24);
+        height: toRem(24);
+        position: absolute;
+        left: toRem(12);
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: #ffffff;
+        mask: url("../img/icons/arrow-small-right.svg") center/ contain no-repeat;
+    }
+}
+.burger-btn {
+    width: toRem(44);
+    height: toRem(32);
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    order: 2;
+
+    &::before,
+    &::after {
+        content: "";
+        width: 65%;
+    }
+    &::after {
+        align-self: flex-end;
+    }
+    &::before,
+    &::after,
+    span {
+        height: toRem(5);
+        background-color: $darkColor;
+        border-radius: toRem(40);
+        transition: background-color 0.3s ease-in-out;
+    }
+    span {
+        width: 100%;
+    }
+
+    @media (any-hover) {
+        &:hover {
+            &::before,
+            &::after,
+            span {
+                background-color: $blueColor;
+            }
+        }
+    }
+    @media (max-width: $tablet-835) {
+        display: flex;
+    }
+}
+.burger-menu {
+    border-radius: toRem(40) 0 0 toRem(40);
+    background: $blueColor;
+    box-shadow: 0 toRem(4) toRem(16) 0 rgba(51, 60, 79, 0.36);
+    min-height: 100svh;
+    max-width: max-content;
+    padding: toRem(21) toRem(28) toRem(21) toRem(38);
+    position: fixed;
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in-out;
+    &._active {
+        transform: translateX(0);
+    }
+    // .burger-menu__container
+
+    &__content {
+        max-height: calc(100svh - toRem(147));
+        width: 100%;
+        padding-inline-end: toRem(30);
+        display: flex;
+        flex-direction: column;
+        row-gap: toRem(30);
+    }
+    // burger-menu__button
+    &__button {
+        margin-left: calc(100% - toRem(46));
+        width: toRem(46);
+        height: toRem(46);
+        border-radius: 50%;
+        border: toRem(2) solid transparent;
+        background:
+            url("../img/icons/cross.svg") center/ toRem(24) toRem(24) no-repeat,
+            $darkColor;
+        transition: all 0.3s ease-in-out;
+        &:not(:last-child) {
+            margin-block-end: toRem(59);
+        }
+
+        @media (any-hover) {
+            &:hover {
+                background-color: $blueColor;
+                border-color: $darkColor;
+            }
+        }
+    }
+}

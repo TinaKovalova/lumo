@@ -1,0 +1,95 @@
+.header {
+    // .header__container
+
+    &__container {
+        padding-block-start: toRem(54);
+        display: flex;
+        align-items: center;
+        gap: toRem(131);
+        @media (max-width: $tablet) {
+            gap: toRem(30);
+            padding-block-start: toRem(15);
+        }
+        .logo,
+        .btn-link,
+        .burger-btn {
+            flex-shrink: 0;
+        }
+    }
+    &__actions {
+        flex: 1 1 toRem(223);
+        min-width: toRem(223);
+        margin-left: auto;
+        display: flex;
+        flex-wrap: wrap-reverse;
+        align-items: center;
+        justify-content: flex-end;
+        gap: toRem(40);
+        @media (max-width: $mobile) {
+            min-width: fit-content;
+        }
+    }
+}
+
+.navigation {
+    font-size: toRem(14);
+    font-weight: 700;
+    text-transform: uppercase;
+    @media (max-width: $tablet-835) {
+        font-size: toRem(20);
+        letter-spacing: toRem(4.6);
+        padding-block-end: toRem(59);
+        overflow-y: auto;
+        overflow-x: hidden;
+        max-height: 80%;
+        width: calc(100% + toRem(30));
+        &::-webkit-scrollbar {
+            width: toRem(5);
+        }
+        &::-webkit-scrollbar-thumb {
+            background: $darkColor;
+            border-radius: 10px;
+        }
+    }
+    // .navigation__list
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: toRem(20) toRem(56);
+        @media (max-width: $tablet-835) {
+            width: 100%;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            row-gap: toRem(64);
+            font-size: toRem(20);
+            letter-spacing: toRem(4.6);
+        }
+    }
+
+    // .navigation__item
+
+    &__item {
+        flex-shrink: 0;
+
+        @media (max-width: $tablet-835) {
+            flex-shrink: 1;
+        }
+    }
+
+    // .navigation__link
+
+    &__link {
+        transition: all 0.3s ease-in-out;
+        @media (any-hover) {
+            &:hover {
+                color: $blueColor;
+                ._active & {
+                    text-decoration: underline;
+                    color: inherit;
+                }
+            }
+        }
+    }
+}
