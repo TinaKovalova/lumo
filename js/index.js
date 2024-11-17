@@ -1,6 +1,7 @@
 "use strict";
 const header = document.querySelector(".header");
 const burgerMenu = document.querySelector(".burger-menu");
+const heroContent = document.querySelector(".hero__content");
 
 header.addEventListener("click", (e) => {
     const target = e.target;
@@ -14,5 +15,16 @@ header.addEventListener("click", (e) => {
     }
     
 });
+
+const resizeObserver = new ResizeObserver((entries) => {
+  for (const entry of entries) {
+    if (entry.contentBoxSize) {
+      heroContent.style.paddingBlockStart = `${entry.contentBoxSize[0].blockSize/16}rem`;
+    }
+  }
+  console.log("changed", heroContent.style.paddingBlockStart);
+});
+resizeObserver.observe(header);
+
 
 

@@ -5,6 +5,10 @@
         width: toRem(140);
         height: toRem(56);
     }
+    @media (max-width: $smallMobile-428) {
+        width: toRem(140);
+        height: toRem(56);
+    }
     // .logo__image
     &__image {
         width: 100%;
@@ -128,5 +132,28 @@
                 border-color: $darkColor;
             }
         }
+    }
+}
+
+.section-header {
+    & > *:not(:last-child) {
+        margin-bottom: toRem(31);
+    }
+
+    // .section-header__subtitle
+
+    &__subtitle {
+        font-size: toRem(12);
+        font-weight: 700;
+        letter-spacing: toRem(3.96);
+        text-transform: uppercase;
+    }
+
+    // .section-header__title
+
+    &__title {
+        font-size: toRem(64);
+        font-weight: 900;
+        text-transform: uppercase;
     }
 }
