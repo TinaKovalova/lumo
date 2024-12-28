@@ -263,6 +263,112 @@
             row-gap: toRem(40);
             grid-template-columns: repeat(auto-fit, minmax(toRem(270), 1fr));
         }
-      
+    }
+}
+.discount {
+    padding-block: toRem(189) toRem(56);
+    @media (max-width: $tablet-835) {
+        padding-block: toRem(50) toRem(19);
+    }
+    @media (max-width: $smallMobile) {
+        padding-block-end: 0;
+    }
+    // .discount__container
+
+    &__container {
+        // min-height: toRem(471);
+        border-radius: toRem(40);
+        background: $darkColor;
+        box-shadow: 0px toRem(4) toRem(16) 0px rgba(51, 60, 79, 0.36);
+        display: flex;
+    }
+
+    // .discount__image-block
+
+    &__image-block {
+        flex: 0 1 toRem(523);
+        position: relative;
+        @media (max-width: $tablet-835) {
+            display: none;
+        }
+
+        &::after,
+        &::before {
+            content: "";
+            width: toRem(276);
+            height: toRem(96);
+            background: url("../img/decor.svg") no-repeat;
+            position: absolute;
+        }
+        &::before {
+            top: toRem(38);
+            right: 0;
+        }
+        &::after {
+            bottom: toRem(38);
+            left: 16;
+        }
+    }
+    &__image {
+        max-width: 100%;
+        position: absolute;
+        z-index: 1;
+        right: toRem(-35);
+        bottom: 0;
+    }
+    // .discount__content
+
+    &__content {
+        color: #ffffff;
+        padding-block: toRem(104) toRem(95);
+        flex-grow: 1;
+        @media (max-width: $tablet-835) {
+            padding-block: toRem(68);
+        }
+        @media (max-width: $smallMobile) {
+            padding-block: toRem(54) toRem(60);
+        }
+    }
+    &__content-body {
+        max-width: toRem(505);
+        padding-inline: toRem(5);
+        margin: 0 auto;
+        @media (max-width: $tablet-835) {
+            text-align: center;
+        }
+    }
+    // .discount__title-block
+
+    &__title-block {
+        & .section-header__title:not(span) {
+            font-size: toRem(46);
+            @media (max-width: $smallMobile) {
+                font-size: toRem(32);
+            }
+        }
+        & .section-header__title span {
+            color: $blueColor;
+            font-size: toRem(64);
+            @media (max-width: $smallMobile) {
+                font-size: toRem(36);
+            }
+        }
+        &:not(:last-child) {
+            margin-bottom: toRem(48);
+        }
+        @media (max-width: $tablet-835) {
+            text-align: center;
+        }
+    }
+}
+.section-header {
+    // .section-header__subtitle
+
+    &__subtitle {
+    }
+
+    // .section-header__title
+
+    &__title {
     }
 }

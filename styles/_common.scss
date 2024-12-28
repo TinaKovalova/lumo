@@ -28,9 +28,17 @@
     background-color: $darkColor;
     position: relative;
     transition: background-color 0.3s ease-in-out;
+    &.btn-link--blue {
+        background-color: $blueColor;
+        transition: all 0.3s;
+    }
     @media (any-hover) {
         &:hover {
             background-color: $blueColor;
+        }
+        &.btn-link--blue:hover {
+            box-shadow: 0px 5px 16px 0px rgba(71, 156, 252, 0.6);
+            color: $darkColor;
         }
     }
     &::before {
@@ -165,17 +173,17 @@
     gap: toRem(25);
     border-radius: 40px;
     background: #fff;
-    box-shadow: 0px 4px 16px 0px rgba(51, 60, 79, 0.16);
+    box-shadow: 0px toRem(4) toRem(16) 0px rgba(51, 60, 79, 0.16);
     transition: box-shadow 0.3s;
     @media (any-hover: hover) {
         &:hover {
-            box-shadow: 0px 4px 16px 0px rgba(51, 60, 79, 0.5);
+            box-shadow: 0px toRem(4) toRem(16) 0px rgba(51, 60, 79, 0.5);
         }
     }
     @media screen and (max-width: $tablet-835) {
         padding-inline: toRem(31);
     }
-   
+
     // .advantage-card__icon
 
     &__icon {
