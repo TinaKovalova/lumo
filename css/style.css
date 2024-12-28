@@ -765,6 +765,7 @@ body::-webkit-scrollbar-thumb {
 }
 .hero__image {
   width: 35.375rem;
+  max-height: 86%;
   aspect-ratio: 566/746;
 }
 @media (max-width: 991.98px) {
@@ -909,7 +910,7 @@ body::-webkit-scrollbar-thumb {
             padding-block-end: 0;
   }
 }
-.discount__container {
+.discount__wrapper {
   border-radius: 2.5rem;
   background: #333c4f;
   -webkit-box-shadow: 0px 0.25rem 1rem 0px rgba(51, 60, 79, 0.36);
@@ -917,6 +918,11 @@ body::-webkit-scrollbar-thumb {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+@media (max-width: 767.98px) {
+  .discount__wrapper {
+    padding-inline: 1.5rem;
+  }
 }
 .discount__image-block {
   -webkit-box-flex: 0;

@@ -147,6 +147,7 @@
 
     &__image {
         width: toRem(566);
+        max-height: 86%;
         aspect-ratio: 566 / 746;
         @media (max-width: $tablet) {
             margin-right: toRem(-46);
@@ -276,11 +277,15 @@
     // .discount__container
 
     &__container {
-        // min-height: toRem(471);
+    }
+    &__wrapper {
         border-radius: toRem(40);
         background: $darkColor;
         box-shadow: 0px toRem(4) toRem(16) 0px rgba(51, 60, 79, 0.36);
         display: flex;
+        @media (max-width: $mobile) {
+            padding-inline: toRem(24);
+        }
     }
 
     // .discount__image-block
