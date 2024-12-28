@@ -249,3 +249,20 @@
         object-fit: cover;
     }
 }
+.advantages {
+    // .advantages__container
+
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(toRem(315), 1fr));
+        gap: toRem(20);
+        @media screen and (max-width: $tablet-835) {
+            gap: toRem(28) toRem(23);
+        }
+        @media screen and (max-width: $mobile) {
+            row-gap: toRem(40);
+            grid-template-columns: repeat(auto-fit, minmax(toRem(270), 1fr));
+        }
+      
+    }
+}

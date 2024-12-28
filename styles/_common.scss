@@ -157,3 +157,134 @@
         text-transform: uppercase;
     }
 }
+.advantage-card {
+    min-height: toRem(470);
+    padding: toRem(32) toRem(38) toRem(33) toRem(31);
+    display: flex;
+    flex-direction: column;
+    gap: toRem(25);
+    border-radius: 40px;
+    background: #fff;
+    box-shadow: 0px 4px 16px 0px rgba(51, 60, 79, 0.16);
+    transition: box-shadow 0.3s;
+    @media (any-hover: hover) {
+        &:hover {
+            box-shadow: 0px 4px 16px 0px rgba(51, 60, 79, 0.5);
+        }
+    }
+    @media screen and (max-width: $tablet-835) {
+        padding-inline: toRem(31);
+    }
+   
+    // .advantage-card__icon
+
+    &__icon {
+        min-height: toRem(83);
+        position: relative;
+        margin-bottom: toRem(6);
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            z-index: 0;
+            width: toRem(83);
+            height: 100%;
+            border-radius: 50%;
+            background-color: $blueColor;
+        }
+    }
+    &__icon-img {
+        position: absolute;
+        z-index: 1;
+        top: toRem(-4);
+        height: 100%;
+        margin-left: toRem(20);
+    }
+    // .advantage-card__body
+
+    &__body {
+        flex-grow: 1;
+        & > * {
+            margin-bottom: toRem(17);
+        }
+        & > *:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    // .advantage-card__title
+
+    &__title {
+        font-size: toRem(20);
+        font-weight: 700;
+        text-transform: capitalize;
+    }
+
+    // .advantage-card__title-link
+
+    &__title-link {
+        transition: color 0.3s;
+        @media (any-hover: hover) {
+            &:hover {
+                color: $blueColor;
+            }
+        }
+    }
+
+    // .advantage-card__sub-title
+
+    &__sub-title {
+        font-size: toRem(10);
+        font-weight: 700;
+        letter-spacing: toRem(1.6);
+        text-transform: uppercase;
+        color: #9697ab;
+        margin-bottom: toRem(26);
+    }
+
+    // .advantage-card__
+
+    // .advantage-card__text
+
+    &__text {
+        font-size: toRem(14);
+        line-height: 1.43;
+        color: #000000;
+    }
+
+    // .advantage-card__link
+
+    &__link {
+        width: toRem(57);
+        height: toRem(57);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $blueColor;
+        transition:
+            border-radius 0.1s,
+            width 0.5s 0.1s;
+        & div {
+            width: 100%;
+            height: 90%;
+            background-color: $darkColor;
+            mask: url("../img/icons/arrow-small-right-thin.svg") center/ contain no-repeat;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                width: 100%;
+                border-radius: toRem(40);
+            }
+            &:not(:hover) {
+                transition:
+                    border-radius 0.1s 0.3s,
+                    width 0.3s;
+            }
+        }
+    }
+    &__icon {
+    }
+}
