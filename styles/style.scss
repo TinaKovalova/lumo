@@ -7,6 +7,7 @@
 body {
     font-family: "Montserrat", sans-serif;
     color: $darkColor;
+    background-color: #fcfcfc;
 
     &::-webkit-scrollbar-thumb {
         background: $darkColor;
@@ -29,6 +30,12 @@ body {
     max-width: toRem($containerWidth);
     padding-inline: toRem(10);
     margin: 0 auto;
+    @media screen and (max-width: $tablet-835) {
+        padding-inline: toRem(35);
+    }
+    @media screen and (max-width: $smallMobile) {
+        padding-inline: toRem(20);
+    }
 }
 @import "common";
 @import "header";

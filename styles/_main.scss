@@ -1,8 +1,12 @@
 // HERO section
 
 .hero {
-    min-height: toRem(904);
+    min-height: 100svh;
     display: flex;
+    background-color: #ffffff;
+    @media (max-width: $mobile) {
+        min-height: max-content;
+    }
 
     // .hero__content
 
@@ -147,5 +151,101 @@
         @media (max-width: $tablet) {
             margin-right: toRem(-46);
         }
+    }
+}
+.intro {
+    // .intro__container
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-block: toRem(100) toRem(96);
+        gap: toRem(48);
+        @media screen and (max-width: $tablet-835) {
+            flex-direction: column;
+            padding-block: toRem(71) toRem(40);
+        }
+        @media screen and (max-width: $mobile) {
+            padding-block-start: toRem(63);
+            gap: toRem(40);
+        }
+    }
+
+    // .intro__content
+
+    &__content {
+        max-width: toRem(650);
+    }
+
+    // .intro__title-block
+
+    &__title-block {
+        & .section-header__title {
+            font-size: toRem(46);
+            @media screen and (max-width: $tablet-835) {
+                text-align: center;
+            }
+            @media screen and (max-width: $smallMobile) {
+                font-size: toRem(32);
+            }
+        }
+        &:not(:last-child) {
+            margin-bottom: toRem(41);
+            @media screen and (max-width: $tablet-835) {
+                margin-bottom: toRem(28);
+            }
+            @media screen and (max-width: $smallMobile) {
+                margin-bottom: toRem(18);
+            }
+        }
+    }
+
+    // .intro__text
+
+    &__text {
+        color: #000000;
+        line-height: 1.625;
+        @media screen and (max-width: $smallMobile) {
+            font-size: toRem(12);
+        }
+    }
+
+    // .intro__gallery
+
+    &__gallery {
+        max-width: toRem(538);
+        min-width: toPercent(538, $maxWidthContainer);
+        @media screen and (max-width: $tablet-835) {
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+}
+
+.gallery-intro {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, toRem(172));
+    gap: toRem(20) toRem(25);
+    @media screen and (max-width: $tablet-835) {
+        grid-template-rows: repeat(2, toRem(248));
+        gap: toRem(28) toRem(22);
+    }
+    @media screen and (max-width: $smallMobile) {
+        grid-template-rows: repeat(2, toRem(126));
+        gap: toRem(14) toRem(11);
+    }
+
+    // .gallery-intro__item
+
+    &__item {
+    }
+    &__item-image {
+        width: 100%;
+        height: 100%;
+        border-radius: toRem(40);
+        aspect-ratio: 256 / 172;
+        object-fit: cover;
     }
 }
