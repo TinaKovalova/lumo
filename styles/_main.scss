@@ -366,14 +366,211 @@
         }
     }
 }
-.section-header {
-    // .section-header__subtitle
 
-    &__subtitle {
+.upcoming {
+    padding-block: toRem(40) toRem(72);
+
+    // .upcoming__container
+
+    &__container {
     }
 
-    // .section-header__title
+    // .upcoming__title-block
+
+    &__title-block {
+        &:not(:last-child) {
+            margin-bottom: toRem(75);
+            @media (max-width: $tablet) {
+                margin-bottom: toRem(51);
+            }
+            @media (max-width: $mobile) {
+                margin-bottom: toRem(20);
+            }
+        }
+        .section-header__title {
+            font-size: toRem(46);
+            @media (max-width: $mobile) {
+                font-size: toRem(32);
+            }
+        }
+        @media (max-width: $tablet) {
+            text-align: center;
+        }
+    }
+    // .upcoming__gallery
+
+    &__gallery {
+        .upcoming__gallery-line:not(:last-child) {
+            margin-bottom: toRem(32);
+        }
+        & .upcoming__gallery-line:nth-child(even) {
+            transform: rotateY(180deg);
+            & .gallery-line__item > * {
+                transform: rotateY(180deg);
+            }
+        }
+    }
+}
+.gallery-line {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(23.33%, 1fr));
+    grid-auto-rows: toRem(298);
+    gap: toRem(32) toRem(20);
+
+    @media (max-width: $tablet) {
+        grid-template-columns: repeat(2, minmax(toRem(315), 1fr));
+    }
+    @media (max-width: $mobile) {
+        grid-template-columns: repeat(2, minmax(toRem(180), 1fr));
+        grid-auto-rows: auto;
+        gap: toRem(24) toRem(8);
+    }
+
+    // .gallery-line__item
+
+    &__item {
+        border-radius: toRem(40);
+        background-color: #a8a8a8;
+        @media (max-width: $mobile) {
+            &:nth-child(n + 3) {
+                display: none;
+            }
+        }
+    }
+
+    // .gallery-line__item--head
+
+    &__item.gallery-line-head {
+        background-color: #ffffff;
+    }
+
+    // .gallery-line__item-link
+
+    &__item-link {
+        width: 100%;
+        height: 100%;
+        border-radius: toRem(40);
+        transition: box-shadow 0.3s;
+        @media (any-hover: hover) {
+            &:hover {
+                box-shadow: 0px toRem(4) toRem(16) 0px rgba(51, 60, 79, 0.3);
+            }
+        }
+    }
+
+    // .gallery-line__item-image
+
+    &__item-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: toRem(40);
+    }
+}
+
+.gallery-line-head {
+    padding: toRem(27) toRem(44) toRem(25);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        left: 0;
+        top: 0;
+        width: 201.06%;
+        height: 100%;
+        border-radius: toRem(40);
+        background-color: #ffffff;
+        box-shadow: 0px toRem(4) toRem(16) 0px rgba(51, 60, 79, 0.23);
+    }
+    @media (max-width: $smallMobile) {
+        padding-inline: toRem(22);
+        padding-block-start: toRem(14);
+    }
+    & > * {
+        margin-bottom: toRem(14);
+    }
+    & > *:last-child {
+        margin-bottom: 0;
+    }
+
+    // .gallery-line-head__icon
+
+    &__icon {
+        width: toRem(98);
+        height: toRem(98);
+        background: url("../img/upcoming/hanger-fashion.svg") center / contain no-repeat;
+        margin-bottom: toRem(17);
+        @media (max-width: $smallMobile) {
+            width: toRem(49);
+            height: toRem(49);
+        }
+    }
+
+    // .gallery-line-head__subtitle
+
+    &__subtitle {
+        color: #9697ab;
+        font-size: toRem(10);
+        font-weight: 700;
+        letter-spacing: toRem(1.6);
+        text-transform: uppercase;
+        @media (max-width: $smallMobile) {
+            margin-bottom: toRem(4);
+        }
+    }
+
+    // .gallery-line-head__title
 
     &__title {
+        margin-bottom: toRem(22);
+        font-size: toRem(32);
+        font-weight: 700;
+        text-transform: capitalize;
+        @media (max-width: $smallMobile) {
+            font-size: toRem(20);
+            margin-bottom: toRem(13);
+        }
+    }
+
+    // .gallery-line-head__link
+
+    &__link {
+        width: toRem(44);
+        height: toRem(44);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $blueColor;
+        transition:
+            border-radius 0.1s,
+            width 0.5s 0.1s;
+
+        @media (max-width: $smallMobile) {
+            width: toRem(30);
+            height: toRem(30);
+        }
+
+        & div {
+            width: 100%;
+            height: 90%;
+            background-color: $darkColor;
+            mask: url("../img/icons/arrow-small-right-thin.svg") center/ contain no-repeat;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                width: 100%;
+                border-radius: toRem(40);
+            }
+            &:not(:hover) {
+                transition:
+                    border-radius 0.1s 0.3s,
+                    width 0.3s;
+            }
+        }
     }
 }
