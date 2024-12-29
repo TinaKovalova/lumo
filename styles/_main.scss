@@ -573,3 +573,84 @@
         }
     }
 }
+.venue {
+    // .venue__container
+
+    &__container {
+    }
+
+    // .venue__body
+
+    &__body {
+        color: #ffffff;
+        padding: toRem(89) toRem(53) toRem(69);
+        border-radius: 40px;
+        background: $darkColor;
+        box-shadow: 0px toRem(4) toRem(16) 0px rgba(51, 60, 79, 0.36);
+        background:
+            url("../img/pexels-martin-alargent.jpg") center/ cover no-repeat,
+            linear-gradient(0deg, rgba(51, 60, 79, 0.63) 0%, rgba(51, 60, 79, 0.63) 100%),
+            url(<path-to-image>) lightgray 50% / cover no-repeat;
+        @media (max-width: $tablet) {
+            padding-block: toRem(60) toRem(64);
+        }
+        @media (max-width: $mobile) {
+            padding: toRem(46) toRem(18) toRem(43);
+        }
+    }
+
+    // .venue__header
+
+    &__header {
+        display: flex;
+        flex-wrap: wrap-reverse;
+        gap: toRem(50) toRem(20);
+        align-items: center;
+        justify-content: space-between;
+        &:not(:last-child) {
+            margin-bottom: toRem(25);
+        }
+        & .btn-link {
+            @media (min-width: $tablet) {
+                margin-top: toRem(-30);
+            }
+        }
+        @media (max-width: $tablet) {
+            & .section-header__title {
+                font-size: toRem(60);
+            }
+        }
+        @media (max-width: $mobile) {
+            & .section-header__subtitle {
+                font-size: toRem(10);
+            }
+            & .section-header__title {
+                font-size: toRem(32);
+            }
+        }
+    }
+
+    // .venue__text
+
+    &__text {
+        font-weight: 500;
+        line-height: 1.625;
+        @media (max-width: $mobile) {
+            font-size: toRem(14);
+            line-height: 1.43;
+        }
+    }
+}
+.section-header {
+    // .section-header__subtitle
+
+    &__subtitle {
+    }
+
+    // .section-header__title
+
+    &__title {
+    }
+}
+.btn-link {
+}

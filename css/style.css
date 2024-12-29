@@ -1216,3 +1216,69 @@ body::-webkit-scrollbar-thumb {
     transition: border-radius 0.1s 0.3s, width 0.3s;
   }
 }
+
+.venue__body {
+  color: #ffffff;
+  padding: 5.5625rem 3.3125rem 4.3125rem;
+  border-radius: 40px;
+  background: #333c4f;
+  -webkit-box-shadow: 0px 0.25rem 1rem 0px rgba(51, 60, 79, 0.36);
+          box-shadow: 0px 0.25rem 1rem 0px rgba(51, 60, 79, 0.36);
+  background: url("../img/pexels-martin-alargent.jpg") center/cover no-repeat, -webkit-gradient(linear, left bottom, left top, from(rgba(51, 60, 79, 0.63)), to(rgba(51, 60, 79, 0.63))), url(<path-to-image>) lightgray 50%/cover no-repeat;
+  background: url("../img/pexels-martin-alargent.jpg") center/cover no-repeat, linear-gradient(0deg, rgba(51, 60, 79, 0.63) 0%, rgba(51, 60, 79, 0.63) 100%), url(<path-to-image>) lightgray 50%/cover no-repeat;
+}
+@media (max-width: 991.98px) {
+  .venue__body {
+    padding-block: 3.75rem 4rem;
+  }
+}
+@media (max-width: 767.98px) {
+  .venue__body {
+    padding: 2.875rem 1.125rem 2.6875rem;
+  }
+}
+.venue__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap-reverse;
+      flex-wrap: wrap-reverse;
+  gap: 3.125rem 1.25rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.venue__header:not(:last-child) {
+  margin-bottom: 1.5625rem;
+}
+@media (min-width: 991.98px) {
+  .venue__header .btn-link {
+    margin-top: -1.875rem;
+  }
+}
+@media (max-width: 991.98px) {
+  .venue__header .section-header__title {
+    font-size: 3.75rem;
+  }
+}
+@media (max-width: 767.98px) {
+  .venue__header .section-header__subtitle {
+    font-size: 0.625rem;
+  }
+  .venue__header .section-header__title {
+    font-size: 2rem;
+  }
+}
+.venue__text {
+  font-weight: 500;
+  line-height: 1.625;
+}
+@media (max-width: 767.98px) {
+  .venue__text {
+    font-size: 0.875rem;
+    line-height: 1.43;
+  }
+}
