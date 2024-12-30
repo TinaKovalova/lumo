@@ -645,6 +645,13 @@
     // .booking__container
 
     &__container {
+        padding-block: toRem(46);
+        @media (max-width: $tablet) {
+            padding-block: toRem(41);
+        }
+        @media (max-width: $mobile) {
+            padding-block: toRem(37);
+        }
     }
 
     // .booking__body
@@ -674,10 +681,22 @@
                 background: url("../img/decor.svg") center / contain no-repeat;
             }
         }
+        @media (max-width: $mobile) {
+            padding: toRem(37) toRem(30) toRem(50);
+        }
 
         & .section-header {
             flex-grow: 1;
             color: #ffffff;
+            @media (max-width: $mobile) {
+                text-align: center;
+                .section-header__subtitle {
+                    font-size: toRem(10);
+                }
+                .section-header__title {
+                    font-size: toRem(40);
+                }
+            }
         }
     }
 
@@ -701,6 +720,9 @@
         }
         @media (max-width: $mobile) {
             padding: toRem(30) toRem(20) toRem(79);
+        }
+        @media (max-width: toRem(400)) {
+            padding-inline: toRem(10);
         }
     }
 
@@ -773,6 +795,10 @@
         min-height: toRem(50);
         @media (max-width: $tablet) {
             min-width: 38.8%;
+        }
+        @media (max-width: $mobile) {
+            min-width: 100%;
+            min-height: toRem(64);
         }
     }
 }
