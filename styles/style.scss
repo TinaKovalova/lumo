@@ -8,6 +8,7 @@ body {
     font-family: "Montserrat", sans-serif;
     color: $darkColor;
     background-color: #fcfcfc;
+    scroll-behavior: smooth;
 
     &::-webkit-scrollbar-thumb {
         background: $darkColor;

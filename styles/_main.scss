@@ -1,11 +1,22 @@
-// HERO section
+.main {
+    background-color: #ffffff;
+    min-height: 100svh;
+    position: relative;
+    @media (max-width: $mobile) {
+        min-height: max-content;
+    }
+}
 
 .hero {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
     min-height: 100svh;
     display: flex;
     background-color: #ffffff;
     @media (max-width: $mobile) {
-        min-height: max-content;
+        min-height: auto;
     }
 
     // .hero__content
@@ -25,11 +36,18 @@
     // .hero__container
 
     &__container {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        @media (max-width: toRem(699.98)) {
+            padding-block: toRem(100) toRem(65);
+        }
     }
     //hero__content-body
     &__content-body {
         padding-block-start: toRem(186);
-        max-width: toVW(584, $maxWidth);
+        flex-basis: toVW(584, $maxWidth);
+        max-width: toRem(584);
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -41,15 +59,14 @@
         }
         @media (max-width: $tablet-835) {
             max-width: 100%;
+            flex-grow: 1;
         }
-        @media (max-width: toRem(699.99)) {
+
+        @media (max-width: toRem(699.98)) {
             padding-block-start: toRem(97);
             align-items: center;
             padding-inline: toRem(10);
             row-gap: toRem(32);
-        }
-        @media (max-width: toRem(360)) {
-            padding-inline: 0;
         }
     }
 
@@ -69,16 +86,15 @@
                 writing-mode: vertical-rl;
                 text-orientation: sideways-right;
                 transform: rotate(180deg);
-                padding-inline-start: toRem(99);
             }
-            @media (max-width: toRem(699.99)) {
+            @media (max-width:$smallMobile) {
                 font-size: toRem(30);
             }
         }
         & .section-header__title span {
             color: $blueColor;
         }
-        @media (max-width: toRem(699.99)) {
+        @media (max-width: toRem(699.98)) {
             &.section-header {
                 text-align: center;
                 & > *:not(:last-child) {
@@ -90,10 +106,11 @@
     //hero__content-text
     &__content-text {
         font-size: toRem(24);
+        text-shadow: 1px 1px 2px #fff;
         &:not(:last-child) {
             margin-bottom: toRem(18);
         }
-        @media (max-width: toRem(699.99)) {
+        @media (max-width: toRem(699.98)) {
             max-width: toRem(287);
             padding-inline: toRem(26);
             text-align: center;
@@ -111,7 +128,7 @@
         font-size: toRem(12);
         font-weight: 700;
         letter-spacing: toRem(3.96);
-        @media (max-width: toRem(699.99)) {
+        @media (max-width: toRem(699.98)) {
             font-size: toRem(10);
             letter-spacing: toRem(3.3);
         }
@@ -124,13 +141,15 @@
 
     // .hero__content-mage-block
 
-    &__content-mage-block {
+    &__content-image-block {
         flex: 0 0 toVW(710, $maxWidth);
         transform: translateX(-100%);
         background-color: $blueColor;
+        padding-inline-start: toRem(18);
         display: flex;
         align-items: flex-end;
         justify-content: center;
+        position: relative;
         @media (max-width: $tablet) {
             border-radius: toRem(60) 0 0 toRem(60);
             flex-basis: toVW(535, $maxWidth);
@@ -138,17 +157,24 @@
         @media (min-width: toRem(700)) and (max-width: $tablet-835) {
             transform: translateX($containerPadding + px);
         }
-        @media (max-width: toRem(699.99)) {
+        @media (max-width: toRem(699.98)) {
             display: none;
         }
+    }
+    &__image-wrap {
+        min-width: toRem(566);
+        height: 86svh;
+        display: flex;
+        align-items: flex-end;
     }
 
     // .hero__image
 
     &__image {
-        width: toRem(566);
-        // max-height: 86%;
+        width: 100%;
+        height: 100%;
         aspect-ratio: 566 / 746;
+        object-fit: cover;
         @media (max-width: $tablet) {
             margin-right: toRem(-46);
         }
