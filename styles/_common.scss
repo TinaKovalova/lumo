@@ -184,25 +184,19 @@
                 letter-spacing: toRem(4.6);
             }
         }
-        .footer & {
-            @media (max-width: $tablet-835) {
-                // justify-content: space-around;
-            }
-        }
     }
 
     // .navigation__item
 
     &__item {
         flex-shrink: 0;
-
         .header & {
             @media (max-width: $tablet-835) {
                 flex-shrink: 1;
             }
         }
         .footer & {
-                       flex-grow: 1;
+            flex-grow: 1;
             @media (max-width: $mobile) {
                 flex-basis: 40%;
                 text-align: center;
