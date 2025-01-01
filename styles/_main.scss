@@ -147,7 +147,7 @@
 
     &__image {
         width: toRem(566);
-        max-height: 86%;
+        // max-height: 86%;
         aspect-ratio: 566 / 746;
         @media (max-width: $tablet) {
             margin-right: toRem(-46);

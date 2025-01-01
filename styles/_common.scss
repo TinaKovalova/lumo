@@ -143,6 +143,89 @@
     }
 }
 
+.navigation {
+    font-size: toRem(14);
+    font-weight: 700;
+    text-transform: uppercase;
+    .header & {
+        @media (max-width: $tablet-835) {
+            font-size: toRem(20);
+            letter-spacing: toRem(4.6);
+            padding-block-end: toRem(59);
+            overflow-y: auto;
+            overflow-x: hidden;
+            max-height: 80%;
+            width: calc(100% + toRem(30));
+            &::-webkit-scrollbar {
+                width: toRem(5);
+            }
+            &::-webkit-scrollbar-thumb {
+                background: $darkColor;
+                border-radius: 10px;
+            }
+        }
+    }
+
+    // .navigation__list
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        gap: toRem(20) toRem(56);
+        .header & {
+            @media (max-width: $tablet-835) {
+                width: 100%;
+                flex-direction: column;
+                justify-content: center;
+                flex-wrap: nowrap;
+                row-gap: toRem(64);
+                font-size: toRem(20);
+                letter-spacing: toRem(4.6);
+            }
+        }
+        .footer & {
+            @media (max-width: $tablet-835) {
+                // justify-content: space-around;
+            }
+        }
+    }
+
+    // .navigation__item
+
+    &__item {
+        flex-shrink: 0;
+
+        .header & {
+            @media (max-width: $tablet-835) {
+                flex-shrink: 1;
+            }
+        }
+        .footer & {
+                       flex-grow: 1;
+            @media (max-width: $mobile) {
+                flex-basis: 40%;
+                text-align: center;
+            }
+        }
+    }
+
+    // .navigation__link
+
+    &__link {
+        transition: all 0.3s ease-in-out;
+        @media (any-hover) {
+            &:hover {
+                color: $blueColor;
+                ._active & {
+                    text-decoration: underline;
+                    color: inherit;
+                }
+            }
+        }
+    }
+}
+
 .section-header {
     & > *:not(:last-child) {
         margin-bottom: toRem(31);
