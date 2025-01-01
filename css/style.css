@@ -534,6 +534,7 @@ body::-webkit-scrollbar-thumb {
     transition: border-radius 0.1s 0.3s, width 0.3s;
   }
 }
+
 .header {
   position: absolute;
   top: 0;
@@ -1409,6 +1410,7 @@ body::-webkit-scrollbar-thumb {
     font-size: 2.5rem;
   }
 }
+
 .form-booking__wrapper {
   padding: 4.125rem 7rem 6.8125rem;
   display: -webkit-box;

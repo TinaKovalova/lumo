@@ -87,7 +87,7 @@
                 text-orientation: sideways-right;
                 transform: rotate(180deg);
             }
-            @media (max-width:$smallMobile) {
+            @media (max-width: $smallMobile) {
                 font-size: toRem(30);
             }
         }
@@ -264,10 +264,6 @@
         gap: toRem(14) toRem(11);
     }
 
-    // .gallery-intro__item
-
-    &__item {
-    }
     &__item-image {
         width: 100%;
         height: 100%;
@@ -300,10 +296,7 @@
     @media (max-width: $smallMobile) {
         padding-block-end: 0;
     }
-    // .discount__container
 
-    &__container {
-    }
     &__wrapper {
         border-radius: toRem(40);
         background: $darkColor;
@@ -395,11 +388,6 @@
 
 .upcoming {
     padding-block: toRem(40) toRem(72);
-
-    // .upcoming__container
-
-    &__container {
-    }
 
     // .upcoming__title-block
 
@@ -600,11 +588,6 @@
     }
 }
 .venue {
-    // .venue__container
-
-    &__container {
-    }
-
     // .venue__body
 
     &__body {
@@ -724,11 +707,6 @@
                 }
             }
         }
-    }
-
-    // .booking__form
-
-    &__form {
     }
 }
 
