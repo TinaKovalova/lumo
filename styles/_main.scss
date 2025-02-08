@@ -1,6 +1,5 @@
 .main {
     background-color: #ffffff;
-    min-height: 100svh;
     position: relative;
     @media (max-width: $mobile) {
         min-height: max-content;
@@ -12,7 +11,6 @@
     top: 0;
     left: 0;
     width: 100%;
-    min-height: 100svh;
     display: flex;
     background-color: #ffffff;
     @media (max-width: $mobile) {
@@ -25,8 +23,8 @@
         flex: 0 0 100%;
         position: relative;
         z-index: 1;
-        @media (min-width: toRem(700)) and (max-width: $tablet-835) {
-            flex: 1 1 auto;
+        @media (min-width: toRem(699.98)) and (max-width: $tablet) {
+            // flex: 1 1 auto;
             .hero__content-text,
             a {
                 display: none;
@@ -43,23 +41,30 @@
             padding-block: toRem(100) toRem(65);
         }
     }
+    &__content-wrapper {
+        padding-inline-end: toRem(20);
+        flex-shrink: 1;
+        flex-basis: toPercent(calc(730 - ($maxWidth - $maxWidthContainer) / 2), $maxWidthContainer);
+
+        @media (min-width: toRem(699.98)) and (max-width: $tablet) {
+            flex-basis: toVW(297, $maxWidth);
+        }
+        @media (max-width: toRem(699.98)) {
+            max-width: 100%;
+            flex-grow: 1;
+        }
+    }
     //hero__content-body
     &__content-body {
-        padding-block-start: toRem(186);
-        flex-basis: toVW(584, $maxWidth);
         max-width: toRem(584);
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         row-gap: toRem(54);
 
-        @media (min-width: toRem(700)) and (max-width: $tablet-835) {
+        @media (min-width: toRem(699.98)) and (max-width: $tablet) {
             padding-block-start: 0;
             align-items: flex-end;
-        }
-        @media (max-width: $tablet-835) {
-            max-width: 100%;
-            flex-grow: 1;
         }
 
         @media (max-width: toRem(699.98)) {
@@ -74,18 +79,18 @@
 
     &__title-block {
         text-shadow: 1px 1px 2px #fff;
-
         .section-header__subtitle {
-            @media (min-width: toRem(700)) and (max-width: $tablet-835) {
+            @media (min-width: toRem(699.98)) and (max-width: $tablet) {
                 display: none;
             }
         }
         & .section-header__title {
             font-size: toRem(46);
-            @media (min-width: toRem(700)) and (max-width: $tablet-835) {
+            @media (min-width: toRem(699.98)) and (max-width: $tablet) {
                 writing-mode: vertical-rl;
                 text-orientation: sideways-right;
                 transform: rotate(180deg);
+                max-height: toRem(584);
             }
             @media (max-width: $smallMobile) {
                 font-size: toRem(30);
@@ -142,19 +147,29 @@
     // .hero__content-mage-block
 
     &__content-image-block {
-        flex: 0 0 toVW(710, $maxWidth);
+        flex: 0 0 toPercent(calc(710 - ($maxWidth - $maxWidthContainer) / 2), $maxWidthContainer);
         transform: translateX(-100%);
-        background-color: $blueColor;
-        padding-inline-start: toRem(18);
         display: flex;
         align-items: flex-end;
         position: relative;
-        @media (max-width: $tablet) {
-            border-radius: toRem(60) 0 0 toRem(60);
-            flex-basis: toVW(535, $maxWidth);
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            z-index: -1;
+            width: 100%;
+            min-height: 100vmax;
+            background-color: $blueColor;
+            @media (max-width: $tablet) {
+                border-radius: toRem(60) 0 0 toRem(60);
+            }
         }
-        @media (min-width: toRem(700)) and (max-width: $tablet-835) {
-            transform: translateX($containerPadding + px);
+        @media (max-width: $tablet) {
+            flex: 0 0 toPercent(calc(297 - ($maxWidth - $maxWidthContainer) / 2), $maxWidthContainer);
+        }
+        @media (min-width: toRem(699.98)) and (max-width: toRem(835)) {
+            transform: translateX(-90%);
         }
         @media (max-width: toRem(699.98)) {
             display: none;
@@ -162,7 +177,7 @@
     }
     &__image-wrap {
         min-width: toRem(566);
-        height: 86svh;
+        height: 100%;
         display: flex;
         align-items: flex-end;
     }
@@ -174,6 +189,7 @@
         height: 100%;
         aspect-ratio: 566 / 746;
         object-fit: contain;
+        object-position: bottom;
         @media (max-width: $tablet) {
             margin-right: toRem(-46);
         }
