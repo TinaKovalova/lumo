@@ -148,7 +148,6 @@
         padding-inline-start: toRem(18);
         display: flex;
         align-items: flex-end;
-        justify-content: center;
         position: relative;
         @media (max-width: $tablet) {
             border-radius: toRem(60) 0 0 toRem(60);

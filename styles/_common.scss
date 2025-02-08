@@ -144,6 +144,7 @@
 }
 
 .navigation {
+    flex-grow: 1;
     font-size: toRem(14);
     font-weight: 700;
     text-transform: uppercase;
@@ -171,8 +172,9 @@
     &__list {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-evenly;
-        gap: toRem(20) toRem(56);
+        justify-content: space-around;
+        gap: toRem(20);
+
         .header & {
             @media (max-width: $tablet-835) {
                 width: 100%;

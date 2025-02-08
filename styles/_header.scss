@@ -11,8 +11,10 @@
         display: flex;
         align-items: center;
         column-gap: toPercent(131, $maxWidthContainer);
+        @media (max-width: toRem(1024)) {
+            column-gap: toPercent(45, $maxWidthContainer);
+        }
         @media (max-width: $tablet) {
-            gap: toRem(30);
             padding-block-start: toRem(15);
         }
         .logo,
@@ -22,7 +24,7 @@
         }
     }
     &__actions {
-        flex: 1 1 toRem(223);
+        flex: 0 1 toRem(223);
         min-width: toRem(223);
         margin-left: auto;
         display: flex;
@@ -32,6 +34,9 @@
         gap: toRem(40);
         @media (max-width: $mobile) {
             min-width: fit-content;
+        }
+        @media (max-width: $tablet-835) {
+            flex-grow: 1;
         }
     }
 }
