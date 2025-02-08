@@ -16,15 +16,25 @@ header.addEventListener("click", (e) => {
     
 });
 
-// const resizeObserver = new ResizeObserver((entries) => {
-//   for (const entry of entries) {
-//     if (entry.contentBoxSize) {
-//       heroContent.style.paddingBlockStart = `${entry.contentBoxSize[0].blockSize/16}rem`;
-//     }
-//   }
-//   console.log("changed", heroContent.style.paddingBlockStart);
-// });
-// resizeObserver.observe(header);
+let lastScroll = 0;
+const defaulOffcet = 100;
+
+const containHide = () => header.classList.contains("hide");
+
+window.addEventListener("scroll", () => {
+  let scrollPosition = window.scrollY || document.documentElement.scrollTop;
+  console.log(scrollPosition, heroContent.clientHeight);
+ 
+  if (scrollPosition > lastScroll && !containHide()) {
+    header.classList.add("hide");
+  } else if (scrollPosition < lastScroll && containHide()) {
+    header.classList.remove("hide");
+  }
+    lastScroll = scrollPosition;
+scrollPosition > heroContent.clientHeight
+  ? header.classList.add("bg")
+  : header.classList.remove("bg");
+})
 
 
 

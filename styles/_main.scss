@@ -1,18 +1,24 @@
-.main {
-    background-color: #ffffff;
-    position: relative;
-    @media (max-width: $mobile) {
-        min-height: max-content;
-    }
-}
-
 .hero {
     position: relative;
     top: 0;
     left: 0;
     width: 100%;
     display: flex;
-    background-color: #ffffff;
+
+    &::before {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: -2;
+        width: 100vw;
+        min-height: 100vmax;
+        background-color: #fff;
+    }
+    @media (max-width: $mobile) {
+        min-height: max-content;
+    }
+
     @media (max-width: $mobile) {
         min-height: auto;
     }
@@ -24,7 +30,6 @@
         position: relative;
         z-index: 1;
         @media (min-width: toRem(699.98)) and (max-width: $tablet) {
-            // flex: 1 1 auto;
             .hero__content-text,
             a {
                 display: none;
@@ -38,18 +43,20 @@
         display: flex;
         align-items: center;
         @media (max-width: toRem(699.98)) {
-            padding-block: toRem(100) toRem(65);
+            padding-block: toRem(96) toRem(62);
         }
     }
     &__content-wrapper {
         padding-inline-end: toRem(20);
         flex-shrink: 1;
+        position: relative;
         flex-basis: toPercent(calc(730 - ($maxWidth - $maxWidthContainer) / 2), $maxWidthContainer);
 
         @media (min-width: toRem(699.98)) and (max-width: $tablet) {
             flex-basis: toVW(297, $maxWidth);
         }
         @media (max-width: toRem(699.98)) {
+            padding-inline-end: 0;
             max-width: 100%;
             flex-grow: 1;
         }
@@ -68,7 +75,6 @@
         }
 
         @media (max-width: toRem(699.98)) {
-            padding-block-start: toRem(97);
             align-items: center;
             padding-inline: toRem(10);
             row-gap: toRem(32);
@@ -149,6 +155,7 @@
     &__content-image-block {
         flex: 0 0 toPercent(calc(710 - ($maxWidth - $maxWidthContainer) / 2), $maxWidthContainer);
         transform: translateX(-100%);
+
         display: flex;
         align-items: flex-end;
         position: relative;
@@ -165,6 +172,7 @@
                 border-radius: toRem(60) 0 0 toRem(60);
             }
         }
+
         @media (max-width: $tablet) {
             flex: 0 0 toPercent(calc(297 - ($maxWidth - $maxWidthContainer) / 2), $maxWidthContainer);
         }

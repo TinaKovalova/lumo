@@ -539,9 +539,25 @@ body::-webkit-scrollbar-thumb {
 
 .header {
   position: sticky;
-  bottom: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   z-index: 100;
+  -webkit-transform: translate(0);
+      -ms-transform: translate(0);
+          transform: translate(0);
+  -webkit-transition: -webkit-transform 0.5s linear;
+  transition: -webkit-transform 0.5s linear;
+  transition: transform 0.5s linear;
+  transition: transform 0.5s linear, -webkit-transform 0.5s linear;
+}
+.header.bg {
+  background-color: rgba(252, 252, 252, 0.8);
+}
+.header.hide {
+  -webkit-transform: translateY(-100%);
+      -ms-transform: translateY(-100%);
+          transform: translateY(-100%);
 }
 .header__container {
   -webkit-padding-before: 3.375rem;
@@ -609,18 +625,6 @@ body::-webkit-scrollbar-thumb {
   }
 }
 
-.main {
-  background-color: #ffffff;
-  position: relative;
-}
-@media (max-width: 767.98px) {
-  .main {
-    min-height: -webkit-max-content;
-    min-height: -moz-max-content;
-    min-height: max-content;
-  }
-}
-
 .hero {
   position: relative;
   top: 0;
@@ -629,7 +633,23 @@ body::-webkit-scrollbar-thumb {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: #ffffff;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -2;
+  width: 100vw;
+  min-height: 100vmax;
+  background-color: #fff;
+}
+@media (max-width: 767.98px) {
+  .hero {
+    min-height: -webkit-max-content;
+    min-height: -moz-max-content;
+    min-height: max-content;
+  }
 }
 @media (max-width: 767.98px) {
   .hero {
@@ -660,7 +680,7 @@ body::-webkit-scrollbar-thumb {
 }
 @media (max-width: 43.74875rem) {
   .hero__container {
-    padding-block: 6.25rem 4.0625rem;
+    padding-block: 6rem 3.875rem;
   }
 }
 .hero__content-wrapper {
@@ -668,6 +688,7 @@ body::-webkit-scrollbar-thumb {
           padding-inline-end: 1.25rem;
   -ms-flex-negative: 1;
       flex-shrink: 1;
+  position: relative;
   -ms-flex-preferred-size: 50.7575757576%;
       flex-basis: 50.7575757576%;
 }
@@ -679,6 +700,8 @@ body::-webkit-scrollbar-thumb {
 }
 @media (max-width: 43.74875rem) {
   .hero__content-wrapper {
+    -webkit-padding-end: 0;
+            padding-inline-end: 0;
     max-width: 100%;
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;
@@ -710,8 +733,6 @@ body::-webkit-scrollbar-thumb {
 }
 @media (max-width: 43.74875rem) {
   .hero__content-body {
-    -webkit-padding-before: 6.0625rem;
-            padding-block-start: 6.0625rem;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
