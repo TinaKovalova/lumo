@@ -560,8 +560,7 @@ body::-webkit-scrollbar-thumb {
           transform: translateY(-100%);
 }
 .header__container {
-  -webkit-padding-before: 3.375rem;
-          padding-block-start: 3.375rem;
+  padding-block: 3.375rem 0.3125rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1338,8 +1337,8 @@ body::-webkit-scrollbar-thumb {
   background: #333c4f;
   -webkit-box-shadow: 0px 0.25rem 1rem 0px rgba(51, 60, 79, 0.36);
           box-shadow: 0px 0.25rem 1rem 0px rgba(51, 60, 79, 0.36);
-  background: url("../img/pexels-martin-alargent.jpg") center/cover no-repeat, -webkit-gradient(linear, left bottom, left top, from(rgba(51, 60, 79, 0.63)), to(rgba(51, 60, 79, 0.63))), url(<path-to-image>) lightgray 50%/cover no-repeat;
-  background: url("../img/pexels-martin-alargent.jpg") center/cover no-repeat, linear-gradient(0deg, rgba(51, 60, 79, 0.63) 0%, rgba(51, 60, 79, 0.63) 100%), url(<path-to-image>) lightgray 50%/cover no-repeat;
+  background: url("../img/pexels-martin-alargent.webp") center/cover no-repeat, -webkit-gradient(linear, left bottom, left top, from(rgba(51, 60, 79, 0.63)), to(rgba(51, 60, 79, 0.63))), url(<path-to-image>) lightgray 50%/cover no-repeat;
+  background: url("../img/pexels-martin-alargent.webp") center/cover no-repeat, linear-gradient(0deg, rgba(51, 60, 79, 0.63) 0%, rgba(51, 60, 79, 0.63) 100%), url(<path-to-image>) lightgray 50%/cover no-repeat;
 }
 @media (max-width: 991.98px) {
   .venue__body {

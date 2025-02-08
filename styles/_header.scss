@@ -2,7 +2,6 @@
     position: sticky;
     top: 0;
     left: 0;
-    // bottom: 0;
     width: 100%;
     z-index: 100;
     transform: translate(0);
@@ -17,7 +16,7 @@
     // .header__container
 
     &__container {
-        padding-block-start: toRem(54);
+        padding-block: toRem(54) toRem(5);
         display: flex;
         align-items: center;
         column-gap: toPercent(131, $maxWidthContainer);

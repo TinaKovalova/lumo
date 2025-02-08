@@ -620,7 +620,7 @@
         background: $darkColor;
         box-shadow: 0px toRem(4) toRem(16) 0px rgba(51, 60, 79, 0.36);
         background:
-            url("../img/pexels-martin-alargent.jpg") center/ cover no-repeat,
+            url("../img/pexels-martin-alargent.webp") center/ cover no-repeat,
             linear-gradient(0deg, rgba(51, 60, 79, 0.63) 0%, rgba(51, 60, 79, 0.63) 100%),
             url(<path-to-image>) lightgray 50% / cover no-repeat;
         @media (max-width: $tablet) {
