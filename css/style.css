@@ -1163,6 +1163,11 @@ body::-webkit-scrollbar-thumb {
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
 }
+.upcoming__gallery .upcoming__gallery-line:nth-child(even) .gallery-line-head {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
 
 .gallery-line {
   display: grid;

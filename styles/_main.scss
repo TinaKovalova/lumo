@@ -445,6 +445,9 @@
             & .gallery-line__item > * {
                 transform: rotateY(180deg);
             }
+            & .gallery-line-head {
+                align-items: flex-end;
+            }
         }
     }
 }
