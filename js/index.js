@@ -25,7 +25,7 @@ window.addEventListener("scroll", () => {
   let scrollPosition = window.scrollY || document.documentElement.scrollTop;
   console.log(scrollPosition, heroContent.clientHeight);
  
-  if (scrollPosition > lastScroll && !containHide()) {
+  if (scrollPosition > lastScroll && scrollPosition > header.offsetHeight && !containHide()) {
     header.classList.add("hide");
   } else if (scrollPosition < lastScroll && containHide()) {
     header.classList.remove("hide");
