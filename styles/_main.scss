@@ -244,7 +244,10 @@
     &__text {
         color: #000000;
         line-height: 1.625;
-        @media screen and (max-width: $smallMobile) {
+        @media (max-width: toRem(699.98)) {
+            text-align: center;
+        }
+        @media (max-width: $smallMobile) {
             font-size: toRem(12);
         }
     }
