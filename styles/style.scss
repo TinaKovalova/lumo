@@ -25,6 +25,9 @@ body {
 }
 .wrapper > main {
     flex-grow: 1;
+    & > * {
+        scroll-margin-top: toRem(76);
+    }
 }
 
 [class$="__container"] {

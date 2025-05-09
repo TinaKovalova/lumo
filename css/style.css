@@ -111,6 +111,9 @@ body::-webkit-scrollbar-thumb {
       -ms-flex-positive: 1;
           flex-grow: 1;
 }
+.wrapper > main > * {
+  scroll-margin-top: 4.75rem;
+}
 
 [class$=__container] {
   max-width: 83.75rem;
