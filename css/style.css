@@ -636,14 +636,7 @@ body::-webkit-scrollbar-thumb {
 }
 @media (max-width: 767.98px) {
   .hero {
-    min-height: -webkit-max-content;
-    min-height: -moz-max-content;
-    min-height: max-content;
-  }
-}
-@media (max-width: 767.98px) {
-  .hero {
-    min-height: auto;
+    height: auto;
   }
 }
 .hero__content {
@@ -670,7 +663,8 @@ body::-webkit-scrollbar-thumb {
 }
 @media (max-width: 43.74875rem) {
   .hero__container {
-    padding-block: 6rem 3.875rem;
+    -webkit-padding-before: 12.1875rem;
+            padding-block-start: 12.1875rem;
   }
 }
 .hero__content-wrapper {
